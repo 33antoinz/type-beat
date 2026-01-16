@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Beats Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #141414;
+      --accent: #f5c39b;
+      --text: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .beats {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .beat {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 15px;
+    }
+
+    .beat img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .beat h2 {
+      margin: 12px 0 4px;
+      font-size: 18px;
+    }
+
+    .beat p {
+      margin: 0;
+      opacity: 0.7;
+      font-size: 14px;
+    }
+
+    audio {
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .licenses button {
+      width: 100%;
+      margin: 6px 0;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: var(--accent);
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .licenses button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🔥 Type Beats Store</h1>
+
+<div class="beats">
+
+  <!-- BEAT 1 -->
+  <div class="beat">
+    <img src="https://TON-LIEN-COVER.jpg">
+    <h2>PROMIS – Laylow Type Beat</h2>
+    <p>143 BPM • Trap</p>
+
+    <audio controls src="https://TON-LIEN-PREVIEW.wav"></audio>
+
+    <div class="licenses">
+      <button onclick="buy('promis_mp3')">MP3 – 29,99€</button>
+      <button onclick="buy('promis_wav')">WAV – 44,99€</button>
+      <button onclick="buy('promis_stems')">WAV + Stems – 79,99€</button>
+      <button onclick="buy('promis_unlimited')">Unlimited – 129,99€</button>
+    </div>
+  </div>
+
+  <!-- BEAT 2 (EXEMPLE) -->
+  <div class="beat">
+    <img src="https://TON-LIEN-COVER-2.jpg">
+    <h2>INSOMNIE – Népal Type Beat</h2>
+    <p>140 BPM • Chill</p>
+
+    <audio controls src="https://TON-LIEN-PREVIEW-2.wav"></audio>
+
+    <div class="licenses">
+      <button onclick="buy('insomnie_mp3')">MP3 – 29,99€</button>
+      <button onclick="buy('insomnie_wav')">WAV – 44,99€</button>
+      <button onclick="buy('insomnie_stems')">WAV + Stems – 79,99€</button>
+      <button onclick="buy('insomnie_unlimited')">Unlimited – 129,99€</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function buy(id) {
+    const checkout = {
+      // PROMIS
+      promis_mp3: "https://whop.com/checkout/XXXX",
+      promis_wav: "https://whop.com/checkout/YYYY",
+      promis_stems: "https://whop.com/checkout/ZZZZ",
+      promis_unlimited: "https://whop.com/checkout/AAAA",
+
+      // INSOMNIE
+      insomnie_mp3: "https://whop.com/checkout/BBBB",
+      insomnie_wav: "https://whop.com/checkout/CCCC",
+      insomnie_stems: "https://whop.com/checkout/DDDD",
+      insomnie_unlimited: "https://whop.com/checkout/EEEE"
+    };
+
+    window.location.href = checkout[id];
+  }
+</script>
+
+</body>
+</html>
